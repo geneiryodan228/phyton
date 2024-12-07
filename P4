@@ -1,0 +1,99 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyP8ElJlsjg5JWcSIEAETqIm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/geneiryodan228/phyton/blob/main/P4\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UbExZ3NjTbVK",
+        "outputId": "1f1ab4ff-b3be-407c-cdc0-d795362bd612"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "x(1)=2.3787234\n",
+            "x(2)=-0.0340426\n",
+            "x(3)=1.0297872\n",
+            "x(4)=-1.1319149\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "<ipython-input-14-b67b58e0e8e1>:32: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)\n",
+            "  print(\"x(%i)=%.7f\" % (i+1,x[i]))\n"
+          ]
+        }
+      ],
+      "source": [
+        "\n",
+        "import numpy as np\n",
+        "from scipy.linalg import *\n",
+        "a: int = 7\n",
+        "b: int  = 3\n",
+        "y: int  = 1\n",
+        "O: int  = 2\n",
+        "u: int  = 0\n",
+        "v: int  = 5\n",
+        "\n",
+        "A = np.array([\n",
+        "    [3, 1, 1, y],\n",
+        "    [1, -u, v, 4],\n",
+        "    [-5, 0, -1, -7],\n",
+        "    [1, -6, a, 6]])\n",
+        "\n",
+        "# X = np.array([\n",
+        "#     [x1],\n",
+        "#     [x2],\n",
+        "#     [x3],\n",
+        "#     [x4]])\n",
+        "\n",
+        "b = np.array([1, 1, -5,3]).reshape(4,1)\n",
+        "from scipy.linalg import *\n",
+        "A = np.array([\n",
+        "    [3, 1, 1, 1],\n",
+        "    [1, -0, 5, 4],\n",
+        "    [-5, 0, -1, -7],\n",
+        "    [1, -6, 7, 6]])\n",
+        "b = np.array([7, 3, -5 ,3 ]).reshape(4, 1)\n",
+        "x = solve(A, b)\n",
+        "for i in range(len(b)):\n",
+        "  print(\"x(%i)=%.7f\" % (i+1,x[i]))\n",
+        "\n",
+        "\n",
+        "\n"
+      ]
+    }
+  ]
+}
