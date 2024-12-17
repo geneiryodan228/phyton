@@ -1,0 +1,67 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPp8Ds05IoM7RSd2mSE7Wb2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/geneiryodan228/phyton/blob/main/17.12.24%20-%20root_scalar\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 56,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "D71XKOrbMoEQ",
+        "outputId": "16c10a78-d8db-4d37-957a-b82d7e08c43e"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Корень уравнения 18.4910\n",
+            "Значение функции в точке 18.4910 равно 346.91725401274\n",
+            "Количество итеграция 50\n",
+            "Функция вызывалась 100 раз\n"
+          ]
+        }
+      ],
+      "source": [
+        "import scipy. optimize\n",
+        "import numpy as np\n",
+        "def f (x):\n",
+        "  return x**2+5\n",
+        "def fprme(x): return 2*x\n",
+        "z= scipy.optimize.root_scalar(f, x0=3,fprime=fprime,\n",
+        "                                method= 'newton')\n",
+        "print(\"Корень уравнения %.4f\"% z.root)\n",
+        "print(\"Значение функции в точке %.4f равно %.11f\" %\n",
+        "      (z.root,f(z.root)))\n",
+        "print(\"Количество итеграция %i\" % z.iterations)\n",
+        "print(\"Функция вызывалась %i раз\" % z.function_calls)"
+      ]
+    }
+  ]
+}
