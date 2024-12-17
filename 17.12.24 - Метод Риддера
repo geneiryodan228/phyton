@@ -1,0 +1,61 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNjJyETmJVFQirkTlzVPjip",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/geneiryodan228/phyton/blob/main/17.12.24%20-%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%20%D0%A0%D0%B8%D0%B4%D0%B4%D0%B5%D1%80%D0%B0\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C1DVWa2iZEdH",
+        "outputId": "566ba9d7-b468-4752-a101-0be33df76f8c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Корень уравнения 2.6846\n",
+            "Количество итераций 5\n",
+            "Функция вызывалась 12 раз\n"
+          ]
+        }
+      ],
+      "source": [
+        "import scipy.optimize; import numpy as np; a,b=2,3\n",
+        "def f(x):\n",
+        "  return x**3*np.log(x) - 6*x*np.sin(x)-12\n",
+        "z = scipy.optimize.root_scalar(f,bracket=[a,b],method='ridder')\n",
+        "print(\"Корень уравнения %.4f\" %z.root)\n",
+        "print(\"Количество итераций %i\" %z.iterations)\n",
+        "print(\"Функция вызывалась %i раз\" %z.function_calls)"
+      ]
+    }
+  ]
+}
